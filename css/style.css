@@ -25,6 +25,7 @@ body {
 .img-holder {
   min-width: 350px;
   height: 100%;
+  overflow: hidden;
 }
 img {
   width: 100%;
@@ -32,9 +33,25 @@ img {
   object-fit: cover;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+}
+img:hover{
+    transform: scale(1.5);
 }
 .content {
   padding: 25px 20px;
+  transition-property: transform;
+  animation-name: rotate;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes rotate{
+    from{
+        transform: translateX(-20px);
+    }
+    to{
+        transform: translateX(0px);
+    }
 }
 .title {
   color: #66656a;
